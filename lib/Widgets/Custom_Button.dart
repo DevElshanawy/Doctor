@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:doctor_appp/Screens/home.dart';
+import 'package:doctor_appp/Screens/barpage.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
       ),
       onPressed: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => HomeScreen()));
+            builder: (context) => BarPage()));
       },
       child: const Text(
         'Get Started',
