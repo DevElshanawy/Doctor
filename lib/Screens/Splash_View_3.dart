@@ -1,4 +1,3 @@
-// ignore_for_file: file_names
 
 import 'package:doctor_appp/Helper/Splash_Texts.dart';
 import 'package:doctor_appp/Shared/Splash_background.dart';

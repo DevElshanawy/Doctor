@@ -14,9 +14,9 @@ class BarPage extends StatefulWidget {
 class _BarPageState extends State<BarPage> {
   var listicon = [
     Icons.list,
-    Icons.settings,
+    Icons.person,
   ];
-  List<Widget> page=[ const Homepage(), const Settingspage()];
+  List<Widget> page=[ const Homepage(), const Profile()];
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
