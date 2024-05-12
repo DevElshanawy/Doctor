@@ -1,4 +1,6 @@
 import 'package:doctor_appp/Screens/Splash_View.dart';
+import 'package:doctor_appp/Screens/doctorpage.dart';
+import 'package:doctor_appp/Screens/doctors_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,8 +19,13 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme:
-          ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      routes: {
+        "doctorpage": (context) => doctorpage(),
+        "doctorsscreen": (context) => doctors(),
+      },
       home: const SplashView(),
     );
   }
