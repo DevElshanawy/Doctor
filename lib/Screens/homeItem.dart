@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -15,7 +16,8 @@ class HomeItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 150,
+
+            height: 150;
             width: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,6 +52,7 @@ class HomeItem extends StatelessWidget {
                     fontSize: 33,
                     fontWeight: FontWeight.w500,
                     color: Colors.black),
+
               ),
             ),
           )
