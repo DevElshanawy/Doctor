@@ -1,19 +1,12 @@
 import 'package:doctor_appp/Screens/Splash_View.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:doctor_appp/Screens/doctorpage.dart';
+import 'package:doctor_appp/Screens/doctors_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'firebase_options.dart';
-
 late Size mq;
-void main()async {
-
-WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const DoctorApp());
@@ -26,8 +19,13 @@ class DoctorApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme:
-          ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue)),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      routes: {
+        "doctorpage": (context) => doctorpage(),
+        "doctorsscreen": (context) => doctors(),
+      },
       home: const SplashView(),
     );
   }
