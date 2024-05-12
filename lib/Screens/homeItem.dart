@@ -16,13 +16,14 @@ class HomeItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 200,
+
+            height: 150;
             width: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                    height: 150,
+                    height: 100,
                     width: 100,
                     child:
                         Image(image: AssetImage("assets/images/doctors.png"))),
@@ -40,20 +41,18 @@ class HomeItem extends StatelessWidget {
               color: Colors.grey[200],
             ),
           ),
-          
-          Positioned(bottom: 20,
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              height: 150,
-              width: 150,
-              child: FittedBox(
-                child: Text(
-                  (text),
-                  style: TextStyle(
-                      fontSize: 33,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black),
-                ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            height: 150,
+            width: 150,
+            child: FittedBox(
+              child: Text(
+                (text),
+                style: TextStyle(
+                    fontSize: 33,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black),
+
               ),
             ),
           )
