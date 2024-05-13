@@ -1,5 +1,4 @@
-
-import 'package:doctor_appp/Screens/homeItem.dart';
+import 'package:doctor_appp/Widgets/homeItem.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -15,23 +14,33 @@ class Homepage extends StatelessWidget {
           children: [
             Row(
               children: [
-                HomeItem(text: "مكالمه دكتور", onTap: () {}),
+                HomeItem(
+                  image: "",
+                  text: "مكالمه دكتور",
+                  onTap: () {},
+                ),
                 const SizedBox(
                   width: 20,
                 ),
                 HomeItem(
+                  image: "",
                   text: "دكتور",
-                  onTap: () {Navigator.of(context).pushNamed('doctorpage');},
+                  onTap: () {
+                    Navigator.of(context).pushNamed('doctorpage');
+                  },
                 ),
               ],
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: HomeItem(
-                    text: "تحاليل واشاعات",
-                    onTap: () {},
-                  ),
+                image: "",
+                text: "تحاليل واشاعات",
+                onTap: () {},
+              ),
             ),
           ],
         ),

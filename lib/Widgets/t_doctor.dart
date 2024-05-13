@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
+// ignore: must_be_immutable
 class T_doctor extends StatelessWidget {
-  const T_doctor({
+   T_doctor({
     super.key,
+    required this.icon,required this.text,required this.onTap
   });
-
+IconData icon;
+String text;
+Function onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed('doctorsscreen');
+        onTap();
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           child: Row(
             children: [
-              Icon(Icons.menu),
+              Icon(icon),
               SizedBox(
                 width: 270,
               ),
               Text(
-                "اسنان",
+                text,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ],
