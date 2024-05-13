@@ -15,16 +15,16 @@ class Homepage extends StatelessWidget {
             Row(
               children: [
                 HomeItem(
-                  image: "",
-                  text: "مكالمه دكتور",
+                  image: "assets/images/test.png",
+                  text: "بنك دم",
                   onTap: () {},
                 ),
                 const SizedBox(
                   width: 20,
                 ),
                 HomeItem(
-                  image: "",
-                  text: "دكتور",
+                  image: "assets/images/doctor.png",
+                  text: "عيادات",
                   onTap: () {
                     Navigator.of(context).pushNamed('doctorpage');
                   },
@@ -32,15 +32,24 @@ class Homepage extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: HomeItem(
-                image: "",
-                text: "تحاليل واشاعات",
-                onTap: () {},
-              ),
+            Row(
+              children: [
+                HomeItem(
+                  image: "assets/images/Ellipse 36.png",
+                  text: "تحاليل واشاعات",
+                  onTap: () {},
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                HomeItem(
+                  image: "assets/images/clinical.png",
+                  text: " تنبيهات الادويه",
+                  onTap: () {},
+                ),
+              ],
             ),
           ],
         ),

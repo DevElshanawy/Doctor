@@ -2,10 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 // ignore: must_be_immutable
 class HomeItem extends StatelessWidget {
-  HomeItem({super.key, required this.text, required this.onTap,required this.image});
+  HomeItem(
+      {super.key,
+      required this.text,
+      required this.onTap,
+      required this.image});
   String text;
   Function onTap;
   String image;
@@ -18,16 +21,16 @@ class HomeItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 150,
+            height: 220,
             width: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                    height: 100,
-                    width: 100,
-                    child:
-                        Image(image: AssetImage(image))),
+                CircleAvatar(
+                  radius: 60,
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage(image),
+                ),
               ],
             ),
             decoration: BoxDecoration(
@@ -39,19 +42,20 @@ class HomeItem extends StatelessWidget {
                 ),
               ],
               borderRadius: BorderRadius.circular(10.0),
-              color: Colors.grey[200],
+              color: Colors.white,
             ),
           ),
           Container(
             alignment: Alignment.bottomCenter,
-            height: 150,
-            width: 150,
+            height: 220,
+            width: 155,
             child: FittedBox(
               child: Text(
                 (text),
                 style: TextStyle(
-                    fontSize: 33,
+                    fontSize: 23,
                     fontWeight: FontWeight.w500,
+                    // fontFamily: "ArefRuqaa",
                     color: Colors.black),
               ),
             ),

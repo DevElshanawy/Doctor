@@ -14,28 +14,85 @@ class doctorpage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
+          child: ListView(
             children: [
               T_doctor(
                 onTap: () {
                   Navigator.of(context).pushNamed('doctorsscreen');
                 },
-                icon: Icons.abc,
-                text: "اسنان",
+                image: 'assets/images/f.png',
+                text: "عيون",
               ),
               T_doctor(
                 onTap: () {
                   Navigator.of(context).pushNamed('doctorsscreen');
                 },
-                icon: Icons.abc,
+                image: 'assets/images/q.png',
                 text: "اسنان",
+              ),
+              
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/r.png',
+                text: "جلديه",
               ),
               T_doctor(
                 onTap: () {
                   Navigator.of(context).pushNamed('doctorsscreen');
                 },
-                icon: Icons.abc,
-                text: "اسنان",
+                image: 'assets/images/ear.png',
+                text: " انف واذن وحنجره  ",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/heart.png',
+                text: "قلب",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/medicine.png',
+                text: "مخ واعصاب",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/stomach.png',
+                text: "باطنه",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/arthritis.png',
+                text: "عظام",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/obstetrical.png',
+                text: "نساءوتوليد",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/kidney.png',
+                text: "كلى",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                image: 'assets/images/obstetrical.png',
+                text: "نساءوتوليد",
               ),
             ],
           ),
