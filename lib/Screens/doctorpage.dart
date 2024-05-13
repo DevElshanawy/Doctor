@@ -16,11 +16,27 @@ class doctorpage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              T_doctor(),
-              T_doctor(),
-              T_doctor(),
-              
-              
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                icon: Icons.abc,
+                text: "اسنان",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                icon: Icons.abc,
+                text: "اسنان",
+              ),
+              T_doctor(
+                onTap: () {
+                  Navigator.of(context).pushNamed('doctorsscreen');
+                },
+                icon: Icons.abc,
+                text: "اسنان",
+              ),
             ],
           ),
         ),
@@ -28,4 +44,3 @@ class doctorpage extends StatelessWidget {
     );
   }
 }
-
