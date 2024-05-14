@@ -1,6 +1,8 @@
 import 'package:doctor_appp/Screens/Splash_View.dart';
 import 'package:doctor_appp/Screens/doctorpage.dart';
 import 'package:doctor_appp/Screens/doctors_screen.dart';
+import 'package:doctor_appp/Screens/notifictions.dart';
+import 'package:doctor_appp/Screens/text_recognition.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +27,8 @@ class DoctorApp extends StatelessWidget {
       routes: {
         "doctorpage": (context) => doctorpage(),
         "doctorsscreen": (context) => doctors(),
+        "notifictions": (context) => NotificationsPage(),
+        "textrecognition": (context) => TextRecognitionPage(),
       },
       home: const SplashView(),
     );
