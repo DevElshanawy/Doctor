@@ -17,7 +17,7 @@ class HomeItem extends StatelessWidget {
         children: [
           Container(
 
-            height: 150;
+            height: 150,
             width: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
