@@ -47,7 +47,7 @@ class Homepage extends StatelessWidget {
                 HomeItem(
                   image: "assets/images/clinical.png",
                   text: " تنبيهات الادويه",
-                  onTap: () {},
+                  onTap: () {Navigator.of(context).pushNamed("notifictions");},
                 ),
               ],
             ),
