@@ -14,53 +14,55 @@ class HomeItem extends StatelessWidget {
   String image;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        onTap();
-      },
-      child: Stack(
-        children: [
-          Container(
-            height: 220,
-            width: 150,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage(image),
-                ),
-              ],
-            ),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xffe6eeff),
-                  offset: Offset(0, 5),
-                  blurRadius: 5,
-                ),
-              ],
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-          ),
-          Container(
-            alignment: Alignment.bottomCenter,
-            height: 220,
-            width: 155,
-            child: FittedBox(
-              child: Text(
-                (text),
-                style: TextStyle(
-                    fontSize: 23,
-                    fontWeight: FontWeight.w500,
-                    // fontFamily: "ArefRuqaa",
-                    color: Colors.black),
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          onTap();
+        },
+        child: Stack(
+          children: [
+            Container(
+              height: 220,
+              width: 150,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 60,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage(image),
+                  ),
+                ],
+              ),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xffe6eeff),
+                    offset: Offset(0, 5),
+                    blurRadius: 5,
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
               ),
             ),
-          )
-        ],
+            Container(
+              alignment: Alignment.bottomCenter,
+              height: 220,
+              width: 155,
+              child: FittedBox(
+                child: Text(
+                  (text),
+                  style: TextStyle(
+                      fontSize: 23,
+                      fontWeight: FontWeight.w500,
+                      // fontFamily: "ArefRuqaa",
+                      color: Colors.black),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
