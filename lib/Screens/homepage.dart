@@ -10,8 +10,21 @@ class Homepage extends StatelessWidget {
         child: Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-        child: Column(
+        child: ListView(
           children: [
+            
+            Padding(
+              padding: const EdgeInsets.only(top: 20,bottom: 60),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  border:
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                  labelText: 'search',
+                  suffixIcon: Icon(Icons.search, color: Colors.black),
+                ),
+              ),
+            ),
+             
             Row(
               children: [
                 HomeItem(
@@ -47,10 +60,13 @@ class Homepage extends StatelessWidget {
                 HomeItem(
                   image: "assets/images/clinical.png",
                   text: " تنبيهات الادويه",
-                  onTap: () {Navigator.of(context).pushNamed("notifictions");},
+                  onTap: () {
+                    Navigator.of(context).pushNamed("notifictions");
+                  },
                 ),
               ],
             ),
+           
           ],
         ),
       ),
