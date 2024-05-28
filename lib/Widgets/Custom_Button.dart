@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:doctor_appp/Helper/cache_helper.dart';
-import 'package:doctor_appp/Screens/barpage.dart';
+import 'package:doctor_appp/Screens/auth/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
       onPressed: () async {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => const BarPage(),
+            builder: (context) => const Login(),
           ),
         );
         await CacheHelper().saveData(key: 'isOnBoardingVisited', value: true);

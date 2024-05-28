@@ -1,5 +1,7 @@
 import 'package:doctor_appp/Helper/cache_helper.dart';
 import 'package:doctor_appp/Screens/Splash_View.dart';
+import 'package:doctor_appp/Screens/auth/screens/login.dart';
+import 'package:doctor_appp/Screens/barpage.dart';
 import 'package:doctor_appp/Screens/doctorpage.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctoranfwazon.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctoratfal.dart';
@@ -10,9 +12,9 @@ import 'package:doctor_appp/Screens/doctors_pagas/doctormokwasab.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctornesawtawled.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctorsgalda.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctorasnan.dart';
-import 'package:doctor_appp/Screens/homepage.dart';
 import 'package:doctor_appp/Screens/notifictions.dart';
 import 'package:doctor_appp/Screens/text_recognition.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -54,7 +56,11 @@ class DoctorApp extends StatelessWidget {
         "doctorbatna": (context) => const doctorbatna(),
       },
       home: CacheHelper().getData(key: 'isOnBoardingVisited') ?? false
-          ? const Homepage()
+          ? FirebaseAuth.instance.currentUser == null
+              ? const Login()
+              : FirebaseAuth.instance.currentUser!.emailVerified == true
+                  ? const BarPage()
+                  : const Login()
           : const SplashView(),
     );
   }
