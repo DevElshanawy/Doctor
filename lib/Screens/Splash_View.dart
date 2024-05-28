@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:doctor_appp/Helper/Fade_Animation.dart';
+import 'package:doctor_appp/Helper/fade_animation.dart';
 import 'package:doctor_appp/Screens/Smooth_Indicator.dart';
 import 'package:doctor_appp/Shared/Splash_background.dart';
 import 'package:flutter/material.dart';

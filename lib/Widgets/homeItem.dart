@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // ignore: must_be_immutable
 class HomeItem extends StatelessWidget {
@@ -24,6 +24,17 @@ class HomeItem extends StatelessWidget {
             Container(
               height: 220,
               width: 150,
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xffe6eeff),
+                    offset: Offset(0, 5),
+                    blurRadius: 5,
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -34,17 +45,6 @@ class HomeItem extends StatelessWidget {
                   ),
                 ],
               ),
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xffe6eeff),
-                    offset: Offset(0, 5),
-                    blurRadius: 5,
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(10.0),
-                color: Colors.white,
-              ),
             ),
             Container(
               alignment: Alignment.bottomCenter,
@@ -53,7 +53,7 @@ class HomeItem extends StatelessWidget {
               child: FittedBox(
                 child: Text(
                   (text),
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 23,
                       fontWeight: FontWeight.w500,
                       // fontFamily: "ArefRuqaa",

@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -19,27 +21,9 @@ class T_doctor extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-          
-          child: ListTile(
-           leading: 
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                backgroundImage: AssetImage(image),
-              ),
-             trailing: 
-              Text(
-                text,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    // fontFamily: "ArefRuqaa"
-                    ),
-              ),
-           
-          ),
           decoration: BoxDecoration(
             color: Colors.white,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   color: Colors.grey,
                   spreadRadius: 1,
@@ -51,6 +35,20 @@ class T_doctor extends StatelessWidget {
           ),
           height: 70,
           width: 500,
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage(image),
+            ),
+            trailing: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                // fontFamily: "ArefRuqaa"
+              ),
+            ),
+          ),
         ),
       ),
     );

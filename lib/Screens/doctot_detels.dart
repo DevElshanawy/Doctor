@@ -1,24 +1,23 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doctor_appp/Widgets/doctorsitem.dart';
-import 'package:doctor_appp/constant.dart';
+import '../Widgets/doctorsitem.dart';
+import '../constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // ignore: must_be_immutable
-class detels extends StatefulWidget {
+class Detels extends StatefulWidget {
   QueryDocumentSnapshot product;
-  detels({required this.product});
+  Detels({super.key, required this.product});
 
   @override
-  State<detels> createState() => _detelsState();
+  State<Detels> createState() => _DetelsState();
 }
 
-class _detelsState extends State<detels> {
+class _DetelsState extends State<Detels> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("بيانات الدكتور"),
+        title: const Text("بيانات الدكتور"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -32,22 +31,24 @@ class _detelsState extends State<detels> {
                   child: CircleAvatar(
                     radius: 70,
                     backgroundColor: Colors.grey[300],
-                    backgroundImage: AssetImage('assets/images/doctor.png'),
+                    backgroundImage:
+                        const AssetImage('assets/images/doctor.png'),
                   ),
                 ),
                 Center(
                   child: Text(
-                    widget.product.get(Kname),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    widget.product.get(kname),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 30),
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 Text(
-                  widget.product.get(Kinfo),
+                  widget.product.get(kinfo),
                   textAlign: TextAlign.end,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -58,22 +59,22 @@ class _detelsState extends State<detels> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      widget.product.get(Krating),
-                      style: TextStyle(
+                      widget.product.get(krating),
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 15,
                       backgroundColor: Colors.white,
                       backgroundImage: AssetImage("assets/images/star.png"),
                     ),
                   ],
                 ),
-                 Divider(
+                const Divider(
                   indent: 50,
                   endIndent: 20,
                   height: 30,
@@ -83,16 +84,16 @@ class _detelsState extends State<detels> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      widget.product.get(Kprice),
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      widget.product.get(kprice),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Icon(Icons.money_rounded),
+                    const Icon(Icons.money_rounded),
                   ],
                 ),
-                Divider(
+                const Divider(
                   indent: 50,
                   endIndent: 20,
                   height: 30,
@@ -102,29 +103,27 @@ class _detelsState extends State<detels> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      widget.product.get(Klocarion),
-                      style: TextStyle(
+                      widget.product.get(klocarion),
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Icon(Icons.location_on),
+                    const Icon(Icons.location_on),
                   ],
                 ),
-               
-                
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                botton(
+                Botton(
                   text: 'حجز',
                   image: "assets/images/booking.png",
                 ),
-                botton(image: "assets/images/call.png", text: "اتصل")
+                Botton(image: "assets/images/call.png", text: "اتصل")
               ],
             )
           ],

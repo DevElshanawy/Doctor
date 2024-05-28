@@ -1,8 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:doctor_appp/Screens/homepage.dart';
-import 'package:doctor_appp/Screens/profilepage.dart';
+import 'homepage.dart';
+import 'profilepage.dart';
 import 'package:flutter/material.dart';
-
 
 class BarPage extends StatefulWidget {
   const BarPage({super.key});
@@ -16,29 +15,24 @@ class _BarPageState extends State<BarPage> {
     Icons.list,
     Icons.person,
   ];
-  List<Widget> page=[ const Homepage(), const profilepage()];
+  List<Widget> page = [const Homepage(), const Profilepage()];
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
         body: page[activeIndex],
-        
-
         floatingActionButton: FloatingActionButton(
           child: const Icon(
             Icons.add,
           ),
-          onPressed: () {
-          
-          },
+          onPressed: () {},
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: AnimatedBottomNavigationBar(
           onTap: (p) {
-          setState(() {
-            activeIndex=p;
-          });
+            setState(() {
+              activeIndex = p;
+            });
           },
           icons: listicon,
           activeIndex: activeIndex,

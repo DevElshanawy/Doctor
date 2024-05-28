@@ -1,17 +1,17 @@
-import 'package:doctor_appp/Screens/doctot_detels.dart';
-import 'package:doctor_appp/Widgets/doctorsitem.dart';
+import '../doctot_detels.dart';
+import '../../Widgets/doctorsitem.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doctor_appp/constant.dart';
+import '../../constant.dart';
 import 'package:flutter/material.dart';
 
-class doctorgalda extends StatefulWidget {
-  const doctorgalda({super.key});
+class Doctorgalda extends StatefulWidget {
+  const Doctorgalda({super.key});
 
   @override
-  State<doctorgalda> createState() => _doctorgaldaState();
+  State<Doctorgalda> createState() => _DoctorgaldaState();
 }
 
-class _doctorgaldaState extends State<doctorgalda> {
+class _DoctorgaldaState extends State<Doctorgalda> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
@@ -32,7 +32,7 @@ class _doctorgaldaState extends State<doctorgalda> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(" جلديه"),
+        title: const Text(" جلديه"),
       ),
       body: Column(
         children: [
@@ -43,7 +43,7 @@ class _doctorgaldaState extends State<doctorgalda> {
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                 labelText: 'search',
-                suffixIcon: Icon(Icons.search, color: Colors.black),
+                suffixIcon: const Icon(Icons.search, color: Colors.black),
               ),
             ),
           ),
@@ -56,13 +56,13 @@ class _doctorgaldaState extends State<doctorgalda> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => detels(product: data[i])));
+                            builder: (context) => Detels(product: data[i])));
                   },
-                  nameText: "${data[i][Kname]}",
-                  infoText: "${data[i][Kinfo]}",
-                  priceText: "${data[i][Kprice]}",
-                  locationText: "${data[i][Klocarion]}",
-                  ratingText: "${data[i][Krating]}",
+                  nameText: "${data[i][kname]}",
+                  infoText: "${data[i][kinfo]}",
+                  priceText: "${data[i][kprice]}",
+                  locationText: "${data[i][klocarion]}",
+                  ratingText: "${data[i][krating]}",
                 );
               },
             ),

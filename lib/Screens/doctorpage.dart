@@ -1,15 +1,14 @@
-import 'package:doctor_appp/Widgets/t_doctor.dart';
+import '../Widgets/t_doctor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class doctorpage extends StatelessWidget {
-  const doctorpage({super.key});
+class Doctorpage extends StatelessWidget {
+  const Doctorpage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('doctor'),
+        title: const Text('doctor'),
       ),
       body: SafeArea(
         child: Padding(
@@ -30,7 +29,6 @@ class doctorpage extends StatelessWidget {
                 image: 'assets/images/q.png',
                 text: "اسنان",
               ),
-              
               T_doctor(
                 onTap: () {
                   Navigator.of(context).pushNamed("doctorgalda");
@@ -75,7 +73,7 @@ class doctorpage extends StatelessWidget {
               ),
               T_doctor(
                 onTap: () {
-                  Navigator.of(context).pushNamed( "doctornesawtawled");
+                  Navigator.of(context).pushNamed("doctornesawtawled");
                 },
                 image: 'assets/images/obstetrical.png',
                 text: "نساءوتوليد",

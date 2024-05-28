@@ -36,14 +36,16 @@ class _TextRecognitionPageState extends State<TextRecognitionPage> {
     setState(() {
       text = recognizedText.text;
     });
-    print(text);
+    if (kDebugMode) {
+      print(text);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: (Text(
+        title: (const Text(
           'text Recognition',
         )),
       ),
@@ -74,8 +76,10 @@ class _TextRecognitionPageState extends State<TextRecognitionPage> {
               child: MaterialButton(
                 onPressed: () {
                   _piclImage(ImageSource.camera).then((value) {
-                        if (_image != null) {textRecognition(_image!);}
-                      });
+                    if (_image != null) {
+                      textRecognition(_image!);
+                    }
+                  });
                 },
                 child: const Text(
                   'التقط صوره من الكاميره',
@@ -90,9 +94,11 @@ class _TextRecognitionPageState extends State<TextRecognitionPage> {
               color: Colors.blue,
               child: MaterialButton(
                 onPressed: () {
-                  _piclImage(ImageSource.gallery).then((value)  {
-                        if (_image != null) {textRecognition(_image!);}
-                      });
+                  _piclImage(ImageSource.gallery).then((value) {
+                    if (_image != null) {
+                      textRecognition(_image!);
+                    }
+                  });
                 },
                 child: const Text(
                   '  اختر صوره من المعرض ',
@@ -106,7 +112,6 @@ class _TextRecognitionPageState extends State<TextRecognitionPage> {
             SelectableText(
               text,
               style: const TextStyle(
-                
                 fontSize: 18,
               ),
             ),
