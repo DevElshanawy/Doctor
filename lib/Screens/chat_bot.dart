@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-
 class ChatBot extends StatefulWidget {
   const ChatBot({super.key});
 
@@ -16,6 +15,14 @@ class ChatBot extends StatefulWidget {
 
 class _ChatBotState extends State<ChatBot> {
   final _c = ChatController();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Initialize mq here
+    mq = MediaQuery.of(context).size;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,15 +78,14 @@ class _ChatBotState extends State<ChatBot> {
 
       //body
       body: Obx(
-            ()=> ListView(
+            () => ListView(
           physics: const BouncingScrollPhysics(),
           controller: _c.scrollC,
-          padding: EdgeInsets.only(top: mq.height * .02 , bottom: mq.height * .1),
+          padding: EdgeInsets.only(top: mq.height * .02, bottom: mq.height * .1),
           children: _c.list.map((e) => MessageCard(message: e)).toList(),
         ),
       ),
     );
   }
 }
-
 
