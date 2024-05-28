@@ -1,11 +1,10 @@
-// ignore_for_file: file_names
 
 import 'package:doctor_appp/Screens/Splash_View_1.dart';
-import 'package:doctor_appp/Screens/splash_view_2.dart';
+import 'package:doctor_appp/Screens/Splash_View_2.dart';
 import 'package:doctor_appp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:doctor_appp/Screens/splash_view_3.dart';
+import 'package:doctor_appp/Screens/Splash_View_3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SmoothIndicator extends StatefulWidget {

@@ -26,19 +26,6 @@ class DoctorIstem extends StatelessWidget {
           onTap();
         },
         child: Container(
-          decoration: BoxDecoration(
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0, 5),
-                spreadRadius: 3,
-                blurRadius: 5,
-              ),
-            ],
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
-          ),
-          width: double.infinity,
           child: Padding(
             padding: const EdgeInsets.all(30),
             child: Column(
@@ -55,15 +42,15 @@ class DoctorIstem extends StatelessWidget {
                         child: Text(ratingText!),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 40,
                     ),
                     Text(
                       nameText!,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    const CircleAvatar(
+                    CircleAvatar(
                       radius: 18,
                       backgroundColor: Colors.grey,
                       backgroundImage: AssetImage('assets/images/doctor.png'),
@@ -73,9 +60,9 @@ class DoctorIstem extends StatelessWidget {
                 Text(
                   maxLines: 2,
                   infoText!,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -83,18 +70,19 @@ class DoctorIstem extends StatelessWidget {
                   children: [
                     Text(
                       priceText!,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
-                    const Icon(Icons.money_rounded),
+                    Icon(Icons.money_rounded),
                   ],
+
                 ),
-                const Divider(
+                 Divider(
                   indent: 50,
                   endIndent: 10,
-                  color: Colors.grey,
+                 color: Colors.grey,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -102,32 +90,45 @@ class DoctorIstem extends StatelessWidget {
                     Text(
                       maxLines: 1,
                       locationText!,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
-                    const Icon(Icons.location_on),
+                    Icon(Icons.location_on),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 Row(
                   children: [
-                    Botton(
+                    botton(
                       text: 'حجز',
                       image: "assets/images/booking.png",
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
-                    Botton(image: "assets/images/call.png", text: "اتصل")
+                    botton(image: "assets/images/call.png", text: "اتصل")
                   ],
                 )
               ],
             ),
           ),
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0, 5),
+                spreadRadius: 3,
+                blurRadius: 5,
+              ),
+            ],
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.white,
+          ),
+          width: double.infinity,
         ),
       ),
     );
@@ -135,8 +136,8 @@ class DoctorIstem extends StatelessWidget {
 }
 
 // ignore: must_be_immutable
-class Botton extends StatelessWidget {
-  Botton({
+class botton extends StatelessWidget {
+  botton({
     super.key,
     required this.image,
     required this.text,
@@ -146,14 +147,7 @@ class Botton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.red,
-      ),
-      height: 50,
-      width: 130,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
             radius: 26,
@@ -161,14 +155,19 @@ class Botton extends StatelessWidget {
             backgroundImage: AssetImage(image),
           ),
           TextButton(
-            child: Text(
-              text,
-              style: const TextStyle(color: Colors.black),
-            ),
-            onPressed: () {},
+            child: Text(text,style: TextStyle(color: Colors.black),),
+            onPressed: () {
+             
+            },
           ),
         ],
       ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.red,
+      ),
+      height: 50,
+      width: 130,
     );
   }
 }

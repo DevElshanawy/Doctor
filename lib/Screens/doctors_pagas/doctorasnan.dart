@@ -1,17 +1,18 @@
-import '../doctot_detels.dart';
-import '../../Widgets/doctorsitem.dart';
+import 'package:doctor_appp/Screens/doctot_detels.dart';
+import 'package:doctor_appp/Widgets/doctorsitem.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../constant.dart';
+import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class Doctorasnan extends StatefulWidget {
-  const Doctorasnan({super.key});
+class doctorasnan extends StatefulWidget {
+  const doctorasnan({super.key});
 
   @override
-  State<Doctorasnan> createState() => _DoctorasnanState();
+  State<doctorasnan> createState() => _doctorasnanState();
 }
 
-class _DoctorasnanState extends State<Doctorasnan> {
+class _doctorasnanState extends State<doctorasnan> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
@@ -32,7 +33,7 @@ class _DoctorasnanState extends State<Doctorasnan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("اسنان"),
+        title: Text("اسنان"),
       ),
       body: Column(children: [
         Padding(
@@ -42,7 +43,7 @@ class _DoctorasnanState extends State<Doctorasnan> {
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
               labelText: 'search',
-              suffixIcon: const Icon(Icons.search, color: Colors.black),
+              suffixIcon: Icon(Icons.search, color: Colors.black),
             ),
           ),
         ),
@@ -50,18 +51,18 @@ class _DoctorasnanState extends State<Doctorasnan> {
           child: ListView.builder(
             itemCount: data.length,
             itemBuilder: (context, i) {
-              return DoctorIstem(
-                nameText: "${data[i][kname]}",
-                infoText: "${data[i][kinfo]}",
-                priceText: "${data[i][kprice]}",
-                locationText: "${data[i][klocarion]}",
-                ratingText: "${data[i][krating]}",
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Detels(product: data[i])));
-                },
+              return  DoctorIstem(
+                
+               
+                nameText: "${data[i][Kname]}",
+                infoText: "${data[i][Kinfo]}",
+                priceText: "${data[i][Kprice]}",
+                locationText: "${data[i][Klocarion]}",
+                ratingText: "${data[i][Krating]}",
+                onTap: (){Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => detels(product: data[i])));},
               );
             },
           ),

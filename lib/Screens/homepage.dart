@@ -1,4 +1,4 @@
-import '../Widgets/homeitem.dart';
+import 'package:doctor_appp/Widgets/homeItem.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -12,17 +12,19 @@ class Homepage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
         child: ListView(
           children: [
+            
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 60),
+              padding: const EdgeInsets.only(top: 20,bottom: 60),
               child: TextFormField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30)),
+                  border:
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
                   labelText: 'search',
-                  suffixIcon: const Icon(Icons.search, color: Colors.black),
+                  suffixIcon: Icon(Icons.search, color: Colors.black),
                 ),
               ),
             ),
+             
             Row(
               children: [
                 HomeItem(
@@ -64,6 +66,7 @@ class Homepage extends StatelessWidget {
                 ),
               ],
             ),
+           
           ],
         ),
       ),

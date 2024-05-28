@@ -8,7 +8,7 @@ class NotificationsPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: TextButton(
-          child: const Text(
+          child: Text(
             'gdjdx',
             style: TextStyle(fontSize: 30),
           ),

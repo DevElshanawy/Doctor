@@ -1,10 +1,10 @@
-// ignore_for_file: file_names
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 // ignore: must_be_immutable
 class HomeItem extends StatelessWidget {
-  HomeItem({super.key, required this.text, required this.onTap});
+  HomeItem({required this.text, required this.onTap});
   String text;
   Function onTap;
   @override
@@ -16,10 +16,21 @@ class HomeItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+
             height: 150,
             width: 150,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                    height: 100,
+                    width: 100,
+                    child:
+                        Image(image: AssetImage("assets/images/doctors.png"))),
+              ],
+            ),
             decoration: BoxDecoration(
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
                   color: Color(0xffe6eeff),
                   offset: Offset(0, 5),
@@ -29,16 +40,6 @@ class HomeItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               color: Colors.grey[200],
             ),
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                    height: 100,
-                    width: 100,
-                    child:
-                        Image(image: AssetImage("assets/images/doctors.png"))),
-              ],
-            ),
           ),
           Container(
             alignment: Alignment.bottomCenter,
@@ -47,10 +48,11 @@ class HomeItem extends StatelessWidget {
             child: FittedBox(
               child: Text(
                 (text),
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 33,
                     fontWeight: FontWeight.w500,
                     color: Colors.black),
+
               ),
             ),
           )

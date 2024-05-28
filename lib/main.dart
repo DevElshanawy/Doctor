@@ -1,19 +1,19 @@
-import 'Helper/cache_helper.dart';
-import 'Screens/splash_view.dart';
-import 'Screens/auth/screens/login.dart';
-import 'Screens/barpage.dart';
-import 'Screens/doctorpage.dart';
-import 'Screens/doctors_pagas/doctoranfwazon.dart';
-import 'Screens/doctors_pagas/doctoratfal.dart';
-import 'Screens/doctors_pagas/doctorazam.dart';
-import 'Screens/doctors_pagas/doctorbatna.dart';
-import 'Screens/doctors_pagas/doctorcalb.dart';
-import 'Screens/doctors_pagas/doctormokwasab.dart';
-import 'Screens/doctors_pagas/doctornesawtawled.dart';
-import 'Screens/doctors_pagas/doctorsgalda.dart';
-import 'Screens/doctors_pagas/doctorasnan.dart';
-import 'Screens/notifictions.dart';
-import 'Screens/text_recognition.dart';
+import 'package:doctor_appp/Helper/cache_helper.dart';
+import 'package:doctor_appp/Screens/Splash_View.dart';
+import 'package:doctor_appp/Screens/auth/screens/login.dart';
+import 'package:doctor_appp/Screens/barpage.dart';
+import 'package:doctor_appp/Screens/doctorpage.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctoranfwazon.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctoratfal.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctorazam.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctorbatna.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctorcalb.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctormokwasab.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctornesawtawled.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctorsgalda.dart';
+import 'package:doctor_appp/Screens/doctors_pagas/doctorasnan.dart';
+import 'package:doctor_appp/Screens/notifictions.dart';
+import 'package:doctor_appp/Screens/text_recognition.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -42,18 +42,18 @@ class DoctorApp extends StatelessWidget {
         ),
       ),
       routes: {
-        "doctorpage": (context) => const Doctorpage(),
-        "doctorgalda": (context) => const Doctorgalda(),
+        "doctorpage": (context) => const doctorpage(),
+        "doctorgalda": (context) => const doctorgalda(),
         "notifictions": (context) => const NotificationsPage(),
         "textrecognition": (context) => const TextRecognitionPage(),
-        "doctorasnan": (context) => const Doctorasnan(),
-        "doctorazam": (context) => const Doctorazam(),
-        "doctormokwasab": (context) => const Doctormokwasab(),
-        "doctoratfal": (context) => const Doctoratfal(),
-        "doctornesawtawled": (context) => const Doctornesawtawled(),
-        "doctorcalb": (context) => const Doctorcalb(),
-        "doctoranfwazon": (context) => const Doctoranfwazon(),
-        "doctorbatna": (context) => const Doctorbatna(),
+        "doctorasnan": (context) => const doctorasnan(),
+        "doctorazam": (context) => const doctorazam(),
+        "doctormokwasab": (context) => const doctormokwasab(),
+        "doctoratfal": (context) => const doctoratfal(),
+        "doctornesawtawled": (context) => const doctornesawtawled(),
+        "doctorcalb": (context) => const doctorcalb(),
+        "doctoranfwazon": (context) => const doctoranfwazon(),
+        "doctorbatna": (context) => const doctorbatna(),
       },
       home: CacheHelper().getData(key: 'isOnBoardingVisited') ?? false
           ? FirebaseAuth.instance.currentUser == null

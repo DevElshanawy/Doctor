@@ -1,16 +1,17 @@
-import '../../Widgets/doctorsitem.dart';
+import 'package:doctor_appp/Widgets/doctorsitem.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../constant.dart';
+import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class Doctoranfwazon extends StatefulWidget {
-  const Doctoranfwazon({super.key});
+class doctoranfwazon extends StatefulWidget {
+  const doctoranfwazon({super.key});
 
   @override
-  State<Doctoranfwazon> createState() => _DoctoranfwazonState();
+  State<doctoranfwazon> createState() => _doctoranfwazonState();
 }
 
-class _DoctoranfwazonState extends State<Doctoranfwazon> {
+class _doctoranfwazonState extends State<doctoranfwazon> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
@@ -31,7 +32,7 @@ class _DoctoranfwazonState extends State<Doctoranfwazon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("  انف واذن وحنجره"),
+        title: Text("  انف واذن وحنجره"),
       ),
       body: Column(children: [
         Padding(
@@ -41,7 +42,7 @@ class _DoctoranfwazonState extends State<Doctoranfwazon> {
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
               labelText: 'search',
-              suffixIcon: const Icon(Icons.search, color: Colors.black),
+              suffixIcon: Icon(Icons.search, color: Colors.black),
             ),
           ),
         ),
@@ -51,11 +52,11 @@ class _DoctoranfwazonState extends State<Doctoranfwazon> {
             itemBuilder: (context, i) {
               return DoctorIstem(
                 onTap: () {},
-                nameText: "${data[i][kname]}",
-                infoText: "${data[i][kinfo]}",
-                priceText: "${data[i][kprice]}",
-                locationText: "${data[i][klocarion]}",
-                ratingText: "${data[i][krating]}",
+                nameText: "${data[i][Kname]}",
+                infoText: "${data[i][Kinfo]}",
+                priceText: "${data[i][Kprice]}",
+                locationText: "${data[i][Klocarion]}",
+                ratingText: "${data[i][Krating]}",
               );
             },
           ),

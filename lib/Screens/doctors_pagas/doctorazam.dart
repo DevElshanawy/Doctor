@@ -1,17 +1,18 @@
-import '../doctot_detels.dart';
-import '../../Widgets/doctorsitem.dart';
+import 'package:doctor_appp/Screens/doctot_detels.dart';
+import 'package:doctor_appp/Widgets/doctorsitem.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../constant.dart';
+import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class Doctorazam extends StatefulWidget {
-  const Doctorazam({super.key});
+class doctorazam extends StatefulWidget {
+  const doctorazam({super.key});
 
   @override
-  State<Doctorazam> createState() => _DoctorazamState();
+  State<doctorazam> createState() => _doctorazamState();
 }
 
-class _DoctorazamState extends State<Doctorazam> {
+class _doctorazamState extends State<doctorazam> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
@@ -32,7 +33,7 @@ class _DoctorazamState extends State<Doctorazam> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("عظام"),
+        title: Text("عظام"),
       ),
       body: Column(children: [
         Padding(
@@ -42,7 +43,7 @@ class _DoctorazamState extends State<Doctorazam> {
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
               labelText: 'search',
-              suffixIcon: const Icon(Icons.search, color: Colors.black),
+              suffixIcon: Icon(Icons.search, color: Colors.black),
             ),
           ),
         ),
@@ -51,17 +52,15 @@ class _DoctorazamState extends State<Doctorazam> {
             itemCount: data.length,
             itemBuilder: (context, i) {
               return DoctorIstem(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Detels(product: data[i])));
-                },
-                nameText: "${data[i][kname]}",
-                infoText: "${data[i][kinfo]}",
-                priceText: "${data[i][kprice]}",
-                locationText: "${data[i][klocarion]}",
-                ratingText: "${data[i][krating]}",
+                onTap: () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => detels(product: data[i])));},
+                nameText: "${data[i][Kname]}",
+                infoText: "${data[i][Kinfo]}",
+                priceText: "${data[i][Kprice]}",
+                locationText: "${data[i][Klocarion]}",
+                ratingText: "${data[i][Krating]}",
               );
             },
           ),

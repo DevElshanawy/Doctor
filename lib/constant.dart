@@ -1,5 +1,5 @@
-String kname = 'name';
-String kprice = 'price';
-String klocarion = 'location';
-String kinfo = 'info';
-String krating = 'rating';
+String Kname = 'name';
+String Kprice = 'price';
+String Klocarion = 'location';
+String Kinfo = 'info';
+String Krating='rating';
