@@ -1,5 +1,6 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, avoid_print
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor_appp/Screens/auth/screens/login.dart';
 import 'package:doctor_appp/Screens/auth/widgets/custom_btn.dart';
 import 'package:doctor_appp/Screens/auth/widgets/text_field.dart';
@@ -170,6 +171,7 @@ class _SignUpState extends State<SignUp> {
         ),
       );
       await verifyEmail();
+      addUserProfile();
       await FirebaseAuth.instance.signOut();
     } on FirebaseAuthException catch (e) {
       _signUpHandleException(e, context);
@@ -181,6 +183,22 @@ class _SignUpState extends State<SignUp> {
         ),
       );
     }
+  }
+
+  //! Add User Data Method
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  Future<void> addUserProfile() {
+    return users
+        .add(
+          {
+            'name': username.text,
+            'email': email.text,
+          },
+        )
+        .then((value) => print("======== User Added ======="))
+        .catchError(
+          (error) => print("======Failed to add user: $error ========="),
+        );
   }
 
   //! Verify Email Method

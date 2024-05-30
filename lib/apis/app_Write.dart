@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:appwrite/appwrite.dart';
 
-import '../helper/global.dart';
 
 class AppWrite {
   static final _client = Client();
