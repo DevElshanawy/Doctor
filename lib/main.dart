@@ -12,6 +12,7 @@ import 'package:doctor_appp/Screens/doctors_pagas/doctormokwasab.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctornesawtawled.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctorsgalda.dart';
 import 'package:doctor_appp/Screens/doctors_pagas/doctorasnan.dart';
+import 'package:doctor_appp/Screens/homepage.dart';
 import 'package:doctor_appp/Screens/notifictions.dart';
 import 'package:doctor_appp/Screens/text_recognition.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,6 +43,7 @@ class DoctorApp extends StatelessWidget {
         ),
       ),
       routes: {
+        "homepage":(context) => const Homepage(),
         "doctorpage": (context) => const doctorpage(),
         "doctorgalda": (context) => const doctorgalda(),
         "notifictions": (context) => const NotificationsPage(),

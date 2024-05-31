@@ -3,8 +3,10 @@ import 'package:doctor_appp/Screens/auth/screens/sign_up.dart';
 import 'package:doctor_appp/Screens/auth/widgets/custom_btn.dart';
 import 'package:doctor_appp/Screens/auth/widgets/text_field.dart';
 import 'package:doctor_appp/Screens/barpage.dart';
+import 'package:doctor_appp/Screens/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -142,6 +144,12 @@ class _LoginState extends State<Login> {
                       }
                     },
                   ),
+            CustomButtonAuth(
+              title: "Login With Google",
+              onPressed: () async {
+                signInWithGoogle();
+              },
+            ),
             const SizedBox(height: 20),
             InkWell(
               onTap: () {
@@ -176,6 +184,28 @@ class _LoginState extends State<Login> {
     );
   }
 
+
+  Future signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    if(googleUser==null){
+      return;
+    }
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+     await FirebaseAuth.instance.signInWithCredential(credential);
+     Navigator.of(context).pushNamedAndRemoveUntil("homepage", (route) => false);
+  }
 //! SignIn Method
   Future<void> signInMethod(BuildContext context) async {
     try {

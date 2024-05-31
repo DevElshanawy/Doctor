@@ -17,7 +17,7 @@ class _BarPageState extends State<BarPage> {
     Icons.list,
     Icons.person,
   ];
-  List<Widget> page=[ const Homepage(), const profilepage()];
+  List<Widget> page=[ const Homepage(), const profilePage()];
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
