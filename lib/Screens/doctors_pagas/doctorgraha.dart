@@ -6,18 +6,18 @@ import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class doctoranfwazon extends StatefulWidget {
-  const doctoranfwazon({super.key});
+class doctorgraha extends StatefulWidget {
+  const doctorgraha({super.key});
 
   @override
-  State<doctoranfwazon> createState() => _doctoranfwazonState();
+  State<doctorgraha> createState() => _doctorgrahaState();
 }
 
-class _doctoranfwazonState extends State<doctoranfwazon> {
+class _doctorgrahaState extends State<doctorgraha> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection('انف وازن').get();
+        await FirebaseFirestore.instance.collection('جراحة اورام').get();
 
     setState(() {
       data.addAll(querySnapshot.docs);
@@ -34,12 +34,12 @@ class _doctoranfwazonState extends State<doctoranfwazon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("انف واذن وحنجره"),
+        title: Text("جراحة "),
       ),
       body: Column(children: [
         Padding(
           padding: const EdgeInsets.all(10),
-          child:  T_doctor(
+          child: T_doctor(
                 image: 'assets/images/search.png',
                 text: 'search',
                 onTap: () {

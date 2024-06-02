@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-
 import 'package:doctor_appp/Helper/Fade_Animation.dart';
 import 'package:doctor_appp/Screens/Smooth_Indicator.dart';
 import 'package:doctor_appp/Shared/Splash_background.dart';
@@ -21,11 +20,14 @@ class _SplashView1State extends State<SplashView>
   void initState() {
     super.initState();
     // Start the animation after a short delay
-    Future.delayed(const Duration(seconds: 1), () {
-      setState(() {
-        _isAnimated = true;
-      });
-    });
+    Future.delayed(
+      const Duration(seconds: 1),
+      () {
+        setState(() {
+          _isAnimated = true;
+        });
+      },
+    );
   }
 
   @override

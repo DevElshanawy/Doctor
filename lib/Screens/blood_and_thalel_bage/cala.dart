@@ -1,23 +1,24 @@
-import 'package:doctor_appp/Screens/doctor_search.dart';
-import 'package:doctor_appp/Widgets/doctorsitem.dart';
+import 'package:doctor_appp/Screens/blood_and_thalel_bage/search.dart';
+import 'package:doctor_appp/Screens/blood_and_thalel_bage/detalsblood.dart';
+import 'package:doctor_appp/Widgets/blood_bank_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor_appp/Widgets/t_doctor.dart';
 import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class doctoranfwazon extends StatefulWidget {
-  const doctoranfwazon({super.key});
+
+class cala_bage extends StatefulWidget {
+  const cala_bage({super.key});
 
   @override
-  State<doctoranfwazon> createState() => _doctoranfwazonState();
+  State<cala_bage> createState() => _cala_bageState();
 }
 
-class _doctoranfwazonState extends State<doctoranfwazon> {
+class _cala_bageState extends State<cala_bage> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection('انف وازن').get();
+        await FirebaseFirestore.instance.collection('غسيل كلى').get();
 
     setState(() {
       data.addAll(querySnapshot.docs);
@@ -34,7 +35,7 @@ class _doctoranfwazonState extends State<doctoranfwazon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("انف واذن وحنجره"),
+        title: Text("مراكز عسيل الكلى"),
       ),
       body: Column(children: [
         Padding(
@@ -45,20 +46,25 @@ class _doctoranfwazonState extends State<doctoranfwazon> {
                 onTap: () {
                   showSearch(
                     context: context,
-                    delegate: DoctorSearch(doctors: data),
+                    delegate: Search(doctors: data),
                   );
                 })),
         Expanded(
           child: ListView.builder(
             itemCount: data.length,
             itemBuilder: (context, i) {
-              return DoctorIstem(
-                onTap: () {},
+              return bloodBankIstem(
+                onTap: (){Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => detelsblood(doctors: data[i])));},
+                image1: 'assets/images/doctor.png',
+                image: "assets/images/call.png",
                 nameText: "${data[i][Kname]}",
                 infoText: "${data[i][Kinfo]}",
                 priceText: "${data[i][Kprice]}",
                 locationText: "${data[i][Klocarion]}",
-                ratingText: "${data[i][Krating]}",
+               
               );
             },
           ),

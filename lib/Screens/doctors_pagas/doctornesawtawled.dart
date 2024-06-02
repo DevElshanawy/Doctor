@@ -1,6 +1,8 @@
+import 'package:doctor_appp/Screens/doctor_search.dart';
 import 'package:doctor_appp/Screens/doctot_detels.dart';
 import 'package:doctor_appp/Widgets/doctorsitem.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doctor_appp/Widgets/t_doctor.dart';
 import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -38,15 +40,15 @@ class _doctornesawtawledState extends State<doctornesawtawled> {
       body: Column(children: [
         Padding(
           padding: const EdgeInsets.all(10),
-          child: TextFormField(
-            decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-              labelText: 'search',
-              suffixIcon: Icon(Icons.search, color: Colors.black),
-            ),
-          ),
-        ),
+          child: T_doctor(
+                image: 'assets/images/search.png',
+                text: 'search',
+                onTap: () {
+                  showSearch(
+                    context: context,
+                    delegate: DoctorSearch(doctors: data),
+                  );
+                })),
         Expanded(
           child: ListView.builder(
             itemCount: data.length,
@@ -55,7 +57,7 @@ class _doctornesawtawledState extends State<doctornesawtawled> {
                 onTap: () {Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => detels(product: data[i])));},
+                            builder: (context) => detels(doctors: data[i])));},
                 nameText: "${data[i][Kname]}",
                 infoText: "${data[i][Kinfo]}",
                 priceText: "${data[i][Kprice]}",
