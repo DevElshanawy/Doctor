@@ -48,6 +48,7 @@ class _detelsState extends State<detels> {
                   widget.doctors.get(Kinfo),
 
                   textAlign: TextAlign.right,
+
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -60,6 +61,7 @@ class _detelsState extends State<detels> {
                   children: [
                     Text(
                       widget.doctors.get(Krating),
+
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -85,6 +87,7 @@ class _detelsState extends State<detels> {
                   children: [
                     Text(
                       widget.doctors.get(Kprice),
+
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -109,6 +112,7 @@ class _detelsState extends State<detels> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
+
                       ),
                     ),
                     SizedBox(

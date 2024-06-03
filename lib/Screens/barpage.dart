@@ -1,4 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:doctor_appp/Screens/chat_bot.dart';
 import 'package:doctor_appp/Screens/homepage.dart';
 import 'package:doctor_appp/Screens/profilepage.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _BarPageState extends State<BarPage> {
     Icons.list,
     Icons.person,
   ];
-  List<Widget> page=[ const Homepage(), const profilepage()];
+  List<Widget> page=[ const Homepage(), const profilePage()];
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -26,11 +27,10 @@ class _BarPageState extends State<BarPage> {
         
 
         floatingActionButton: FloatingActionButton(
-          child: const Icon(
-            Icons.add,
-          ),
+          child: const Image(image: AssetImage("assets/images/Icon_chat.png")),
           onPressed: () {
-          
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>ChatBot(),));
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

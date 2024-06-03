@@ -1,5 +1,6 @@
 import 'package:doctor_appp/Screens/auth/widgets/data_base.dart';
 import 'package:doctor_appp/Screens/home_bage/homepage.dart';
+import 'package:doctor_appp/Screens/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
