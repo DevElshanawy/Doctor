@@ -42,23 +42,26 @@ class DoctorIstem extends StatelessWidget {
                         child: Text(ratingText!),
                       ),
                     ),
-                    SizedBox(
-                      width: 40,
-                    ),
-                    Text(
-                      nameText!,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                   
+                    Expanded(
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        nameText!,
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                     ),
                     CircleAvatar(
                       radius: 18,
-                      backgroundColor: Colors.grey,
+                      backgroundColor: Colors.grey[100],
                       backgroundImage: AssetImage('assets/images/doctor.png'),
                     ),
                   ],
                 ),
                 Text(
-                  maxLines: 2,
+                  textAlign: TextAlign.right,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   infoText!,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -77,23 +80,23 @@ class DoctorIstem extends StatelessWidget {
                     ),
                     Icon(Icons.money_rounded),
                   ],
-
                 ),
-                 Divider(
+                Divider(
                   indent: 50,
                   endIndent: 10,
-                 color: Colors.grey,
+                  color: Colors.grey,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      maxLines: 1,
-                      locationText!,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 20,
+                    Expanded(
+                      child: Text(
+                        textAlign: TextAlign.right,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        locationText!,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Icon(Icons.location_on),
                   ],
@@ -147,7 +150,8 @@ class botton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           CircleAvatar(
             radius: 26,
@@ -155,10 +159,11 @@ class botton extends StatelessWidget {
             backgroundImage: AssetImage(image),
           ),
           TextButton(
-            child: Text(text,style: TextStyle(color: Colors.black),),
-            onPressed: () {
-             
-            },
+            child: Text(
+              text,
+              style: TextStyle(color: Colors.black),
+            ),
+            onPressed: () {},
           ),
         ],
       ),

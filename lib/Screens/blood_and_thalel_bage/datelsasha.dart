@@ -1,29 +1,25 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doctor_appp/Widgets/doctorsitem.dart';
 import 'package:doctor_appp/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // ignore: must_be_immutable
-class detels extends StatefulWidget {
+class detelsasha extends StatefulWidget {
   QueryDocumentSnapshot doctors;
-  detels({required this.doctors});
+  detelsasha({required this.doctors});
 
   @override
-  State<detels> createState() => _detelsState();
+  State<detelsasha> createState() => _detelsashaState();
 }
 
-class _detelsState extends State<detels> {
+class _detelsashaState extends State<detelsasha> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("بيانات الدكتور"),
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
+         
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -31,14 +27,14 @@ class _detelsState extends State<detels> {
                 Center(
                   child: CircleAvatar(
                     radius: 70,
-                    backgroundColor: Colors.grey[300],
-                    backgroundImage: AssetImage('assets/images/doctor.png'),
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/images/a.jpg'),
                   ),
                 ),
                 Center(
                   child: Text(
                     widget.doctors.get(Kname),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 ),
                 const SizedBox(
@@ -46,9 +42,7 @@ class _detelsState extends State<detels> {
                 ),
                 Text(
                   widget.doctors.get(Kinfo),
-
                   textAlign: TextAlign.right,
-
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -60,8 +54,7 @@ class _detelsState extends State<detels> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      widget.doctors.get(Krating),
-
+                      widget.doctors.get(Kprice),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -76,26 +69,6 @@ class _detelsState extends State<detels> {
                     ),
                   ],
                 ),
-                 Divider(
-                  indent: 50,
-                  endIndent: 20,
-                  height: 30,
-                  color: Colors.grey,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      widget.doctors.get(Kprice),
-
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Icon(Icons.money_rounded),
-                  ],
-                ),
                 Divider(
                   indent: 50,
                   endIndent: 20,
@@ -108,11 +81,12 @@ class _detelsState extends State<detels> {
                     Expanded(
                       child: Text(
                         textAlign: TextAlign.right,
+                        
                         widget.doctors.get(Klocarion),
                         style: TextStyle(
+                          
                           fontWeight: FontWeight.bold,
                         ),
-
                       ),
                     ),
                     SizedBox(
@@ -121,20 +95,8 @@ class _detelsState extends State<detels> {
                     Icon(Icons.location_on),
                   ],
                 ),
-               
-                
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                botton(
-                  text: 'حجز',
-                  image: "assets/images/booking.png",
-                ),
-                botton(image: "assets/images/call.png", text: "اتصل")
-              ],
-            )
           ],
         ),
       ),
