@@ -18,7 +18,7 @@ class _doctorcalaState extends State<doctorcala> {
   List data = [];
   getData() async {
     QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection('اطفال').get();
+        await FirebaseFirestore.instance.collection('كلى').get();
 
     setState(() {
       data.addAll(querySnapshot.docs);

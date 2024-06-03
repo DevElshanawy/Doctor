@@ -3,9 +3,6 @@ import 'package:doctor_appp/Screens/auth/screens/sign_up.dart';
 import 'package:doctor_appp/Screens/auth/widgets/custom_btn.dart';
 import 'package:doctor_appp/Screens/auth/widgets/text_field.dart';
 import 'package:doctor_appp/Screens/home_bage/barpage.dart';
-import 'package:doctor_appp/Screens/barpage.dart';
-import 'package:doctor_appp/Screens/homepage.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -136,8 +133,7 @@ class _LoginState extends State<Login> {
                 : CustomButtonAuth(
                     title: "login",
                     onPressed: () async {
-
-                      if (loginFormkey.currentState!.validate()) {
+                      if ( loginFormkey.currentState!.validate()) {
                         setState(() {
                           isLoading = true;
                         });
@@ -198,8 +194,7 @@ class _LoginState extends State<Login> {
     }
 
     // Obtain the auth details from the request
-
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    final GoogleSignInAuthentication? googleAuth = await googleUser.authentication;
 
     // Create a new credential
     final credential = GoogleAuthProvider.credential(
